@@ -29,6 +29,10 @@ getByIdUser(id: number): Observable<User>{
 return this.http.get<User>(`https://blogdogio.herokuapp.com/usuarios/${id}`)
 }
 
+alterar(user: User): Observable<User>{
+  return this.http.put<User>('https://blogdogio.herokuapp.com/usuarios/alterar', user)
+}
+
 logado(){
   let ok: boolean = false
 
