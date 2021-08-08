@@ -50,7 +50,7 @@
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <small class="card-text">Tema: {{item.tema.descricao}}</small>
-            <p class="card-text mt-3"><small class="text-muted">
+            <p class="card-text mt-3">{{item.texto}}<small class="text-muted">
               {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
             <p class="card-text"><small class="text-muted">Autor: {{item.usuario.nome}}</small></p>
 
@@ -69,6 +69,9 @@
             <small class="card-text">Tema: {{item.tema.descricao}}</small>
             <p class="card-text mt-3">{{item.texto}}<small class="text-muted">
               {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+
+              <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+              <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
 
 
           </div>
