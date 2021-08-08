@@ -80,10 +80,10 @@ publicar(){
     this.postagem.usuario = this.user
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-      this.postagem = resp
-      alert('Postagem realizada com sucesso!')
-      this.postagem = new Postagem()
-      this.getAllPostagens()
+    this.postagem = resp
+    alert('Postagem realizada com sucesso!')
+    this.postagem = new Postagem()
+    this.getAllPostagens()
     })
 
   }

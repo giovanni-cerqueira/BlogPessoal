@@ -44,21 +44,22 @@
   <div class="tab-content mb-5" id="nav-tabContent">
 
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+
       <div class="card-columns">
         <div class="card text-center" style="width: 18rem;" *ngFor='let item of listaPostagens'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <small class="card-text">Tema: {{item.tema.descricao}}</small>
-            <p class="card-text mt-3"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+            <p class="card-text mt-3"><small class="text-muted">
+              {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
             <p class="card-text"><small class="text-muted">Autor: {{item.usuario.nome}}</small></p>
 
           </div>
         </div>
-
       </div>
-
-
     </div>
+
+
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-profile-tab">
 
       <div class="card-columns">
@@ -66,7 +67,8 @@
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <small class="card-text">Tema: {{item.tema.descricao}}</small>
-            <p class="card-text mt-3"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+            <p class="card-text mt-3">{{item.texto}}<small class="text-muted">
+              {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
 
 
           </div>
@@ -81,7 +83,8 @@
         <div class="card text-center" style="width: 18rem;" *ngFor='let item of tema.postagem'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
-            <small class="card-text">Tema: {{item.texto}}</small>
+            <small class="card-text">Tema: {{item.tema.descricao}}</small>
+            <p class="card-text mt-3">{{item.texto}}<small class="text-muted"></small>
             <p class="card-text mt-3"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
 
             <p class="card-text"><small class="text-muted">Autor: {{item.usuario.nome}}</small></p>
@@ -111,7 +114,7 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="titulo">Titulo</label>
-          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+          <input [(ngModel)]='postagem.titulo' name="titulo" type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
         </div>
         <div class="form-group">
           <label for="texto">Texto</label>
