@@ -18,23 +18,23 @@ export class PostagemService {
   }
 
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://blogdogio.herokuapp.com/postagens', this.token)
+    return this.http.get<Postagem[]>('https://blogdogio.herokuapp.com/postagens')
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-  return this.http.get<Postagem>(`https://blogdogio.herokuapp.com/postagens/${id}`, this.token)
+  return this.http.get<Postagem>(`https://blogdogio.herokuapp.com/postagens/${id}`)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://blogdogio.herokuapp.com/postagens', postagem, this.token)
+    return this.http.post<Postagem>('https://blogdogio.herokuapp.com/postagens', postagem)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://blogdogio.herokuapp.com/postagens', postagem, this.token)
+    return this.http.put<Postagem>('https://blogdogio.herokuapp.com/postagens', postagem)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://blogdogio.herokuapp.com/postagens/${id}`, this.token)
+    return this.http.delete(`https://blogdogio.herokuapp.com/postagens/${id}`)
   }
 
 
